@@ -1,0 +1,11 @@
+{
+  "artifact": "e1_tests",
+  "what": "pathproof reference implementation, full test suite",
+  "python": "3.9.6",
+  "run_utc": "2026-09-16T18:53:06.622074Z",
+  "runner": "pytest",
+  "passed": 20,
+  "failed": 0,
+  "summary": "20 passed in 0.06s",
+  "exit": 0
+}

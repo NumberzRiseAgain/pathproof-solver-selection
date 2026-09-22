@@ -1,0 +1,83 @@
+{
+  "run_utc": "2026-09-01T02:42:57.755023+00:00",
+  "git_rev": "c65b9751fa23f3be7acbcf5480dfd82341001be3",
+  "python": "3.11.15",
+  "synthetic": true,
+  "synthetic_signal": "recursive",
+  "tag": "",
+  "protocol": {
+    "train": "synthetic",
+    "test": "synthetic",
+    "stride": 1,
+    "seeds": 2,
+    "threshold_fit_on": "inner validation split of train"
+  },
+  "static_formula": {
+    "tss": 0.05684367988032907,
+    "hss2": 0.012670420865441612,
+    "recall": 0.42857142857142855,
+    "precision": 0.05152671755725191,
+    "far": 0.3717277486910995,
+    "tp": 27,
+    "fn": 36,
+    "fp": 497,
+    "tn": 840,
+    "threshold": -0.7177831809925719,
+    "tss_ci95": [
+      -0.06522902034261285,
+      0.17536944196433005
+    ],
+    "expression": "sqrt(min(sqrt(USFLUX_mean), div(R_VALUE_delta, TOTUSJH_last)))",
+    "size": 7,
+    "val_tss": 0.2350702191888699,
+    "kind": "static formula"
+  },
+  "recursive_rule": {
+    "tss": 0.03357433723925868,
+    "hss2": 0.006224577838037718,
+    "recall": 0.49206349206349204,
+    "precision": 0.04813664596273292,
+    "far": 0.45848915482423336,
+    "tp": 31,
+    "fn": 32,
+    "fp": 613,
+    "tn": 724,
+    "threshold": 0.05637259738927569,
+    "tss_ci95": [
+      -0.09453833703860937,
+      0.16328405410199762
+    ],
+    "rule": "s_t = min(sub(sub(TOTPOT, d_MEANGBH), tanh(-2)), add(neg(s), div(TOTBSQ, -0.5)))",
+    "size": 13,
+    "depth": 4,
+    "terminals": [
+      "TOTBSQ",
+      "TOTPOT",
+      "d_MEANGBH",
+      "s"
+    ],
+    "val_tss": 0.22037012731329575,
+    "kind": "recursive rule",
+    "n_seeds": 2,
+    "all_seed_val_tss": [
+      0.22037012731329575,
+      0.12206326289539304
+    ],
+    "all_seed_rules": [
+      "s_t = min(sub(sub(TOTPOT, d_MEANGBH), tanh(-2)), add(neg(s), div(TOTBSQ, -0.5)))",
+      "s_t = sqrt(MEANGAM)"
+    ],
+    "all_seed_terminals": [
+      [
+        "TOTBSQ",
+        "TOTPOT",
+        "d_MEANGBH",
+        "s"
+      ],
+      [
+        "MEANGAM"
+      ]
+    ]
+  },
+  "margin_recursive_minus_static": -0.02326934264107039
+}

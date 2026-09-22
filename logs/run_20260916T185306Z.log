@@ -1,0 +1,23 @@
+=== COGLINE-style evidence run ===
+topic       DPA26TZ05-DV003_SPEEDDIAL_STTR
+started     2026-09-16T18:53:06Z
+host        Darwin 25.5.0 arm64
+python      Python 3.9.6
+git         not a repo
+=== reproduce.sh ===
+== SPEED DIAL evidence pack: reproduce.sh  2026-09-16T18:53:06Z
+== python: Python 3.9.6   root: /Users/raghu/Downloads/01_Pursuits/2026-09_SBIR_September/DPA26TZ05-DV003_SPEEDDIAL_STTR/08_Analysis
+-- e1: tests
+e1_tests: 20 passed in 0.06s [pytest]
+-- e2: walkthrough
+e2_demo: exit 0; matches shipped output: True; guard 537,600 vs no-guard 672,000; promoted 0: True; held-out 2 of 2
+-- e3: recorded developer test (transcription + hashes)
+e3_devtest: transcribed from SPEEDDIAL_Developer_Test_Final_Report.xlsx (e69f03f9e22b...) and DEVELOPER_TEST.md (5e3d00c19724...); arms A 0/3, B 0/3, C 3/3, D 3/3
+-- e4: SWAN-SF study (optional)
+e4_swansf: tests exit 0; 10 shipped result file(s) hashed; real-data run: no
+-- manifest and lock check
+manifest: run 6fe38d1f66c26212; 66 input files hashed; lock MATCHES (06bc8e0af194...); git HEAD 9abeddc; lock commit present: True
+== done, status 0  (0 = every gated step passed)
+=== finished ===
+exit code   0
+elapsed     4s

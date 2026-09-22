@@ -1,0 +1,18 @@
+train SYNTHETIC partition: n=1400  timesteps=60  params=24  positives=63 (4.50%)
+test  SYNTHETIC partition: n=1400  timesteps=60  params=24  positives=63 (4.50%)
+
+*** SYNTHETIC DATA - pipeline validation only. No number below is a scientific result. ***
+
+features: 144  train 980  val 420  test 1400
+
+========================================================================
+GP   TSS +0.5848  [+0.4702, +0.6822]   HSS2 +0.2055   nodes 2
+RF   TSS +0.6593  [+0.5476, +0.7650]   HSS2 +0.3754
+SVM  TSS +0.6997  [+0.5969, +0.7907]   HSS2 +0.3199
+margin vs best baseline: -0.1149
+========================================================================
+
+discovered expression:
+  neg(TOTUSJH_delta)
+
+written to /home/claude/swansf-sr/src/../results/synthetic_fullbudget.json

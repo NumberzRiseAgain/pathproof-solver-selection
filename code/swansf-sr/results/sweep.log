@@ -1,0 +1,7 @@
+pc=0.0      valTSS=0.6678 nodes=2   seeds=[0.6678, 0.662, 0.662] neg(TOTUSJH_delta)
+pc=5e-05    valTSS=0.6678 nodes=2   seeds=[0.6678, 0.662, 0.662] neg(TOTUSJH_delta)
+pc=0.0002   valTSS=0.6678 nodes=2   seeds=[0.6678, 0.662, 0.662] neg(TOTUSJH_delta)
+pc=0.0008   valTSS=0.6678 nodes=2   seeds=[0.6678, 0.662, 0.662] neg(TOTUSJH_delta)
+pc=0.002    valTSS=0.6678 nodes=2   seeds=[0.6678, 0.662, 0.662] neg(TOTUSJH_delta)
+
+SELECTED parsimony_coefficient = 0.0   val_tss 0.6678   nodes 2

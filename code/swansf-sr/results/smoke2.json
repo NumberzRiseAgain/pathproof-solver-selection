@@ -1,0 +1,77 @@
+{
+  "run_utc": "2026-09-01T03:02:18.436349+00:00",
+  "git_rev": "00667ae315e878c408deec2a12b8b17066849a80",
+  "python": "3.11.15",
+  "synthetic": true,
+  "synthetic_signal": "recursive",
+  "tag": "",
+  "protocol": {
+    "train": "synthetic",
+    "test": "synthetic",
+    "stride": 1,
+    "seeds": 2,
+    "threshold_fit_on": "inner validation split of train"
+  },
+  "static_formula": {
+    "tss": 0.05684367988032907,
+    "hss2": 0.012670420865441612,
+    "recall": 0.42857142857142855,
+    "precision": 0.05152671755725191,
+    "far": 0.3717277486910995,
+    "tp": 27,
+    "fn": 36,
+    "fp": 497,
+    "tn": 840,
+    "threshold": -0.7177831809925719,
+    "tss_ci95": [
+      -0.06522902034261285,
+      0.17536944196433005
+    ],
+    "expression": "sqrt(min(sqrt(USFLUX_mean), div(R_VALUE_delta, TOTUSJH_last)))",
+    "size": 7,
+    "val_tss": 0.2350702191888699,
+    "kind": "static formula"
+  },
+  "recursive_rule": {
+    "tss": -0.09498878085265527,
+    "hss2": -0.012607961878288493,
+    "recall": 0.5714285714285714,
+    "precision": 0.038834951456310676,
+    "far": 0.6664173522812267,
+    "tp": 36,
+    "fn": 27,
+    "fp": 891,
+    "tn": 446,
+    "threshold": 0.18224430467713915,
+    "tss_ci95": [
+      -0.22181070299311245,
+      0.022327695604341755
+    ],
+    "rule": "s_t = sqrt(d_MEANGBT)",
+    "size": 2,
+    "depth": 2,
+    "terminals": [
+      "d_MEANGBT"
+    ],
+    "val_tss": 0.20120750754692207,
+    "kind": "recursive rule",
+    "n_seeds": 2,
+    "all_seed_val_tss": [
+      0.20120750754692207,
+      0.12206326289539304
+    ],
+    "all_seed_rules": [
+      "s_t = sqrt(d_MEANGBT)",
+      "s_t = sqrt(MEANGAM)"
+    ],
+    "all_seed_terminals": [
+      [
+        "d_MEANGBT"
+      ],
+      [
+        "MEANGAM"
+      ]
+    ]
+  },
+  "margin_recursive_minus_static": -0.15183246073298434
+}

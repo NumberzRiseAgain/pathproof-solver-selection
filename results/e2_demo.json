@@ -1,0 +1,36 @@
+{
+  "artifact": "e2_demo",
+  "what": "python3 -m hazpath.demo on the synthetic HazMat fixture (33 rows, 4 tables, 6 problems)",
+  "run_utc": "2026-09-16T18:53:07.098652Z",
+  "exit": 0,
+  "output_sha256": "82236640ecdeccfc017b448f1f8a1edfdfe2d75bb5840b2a2eaf1127094d2312",
+  "matches_shipped_DEMO_OUTPUT": true,
+  "primitive_vocabulary_size": 12,
+  "path_with_guard": {
+    "steps": 7,
+    "deduplicate_is_step": 4,
+    "answer": 537600.0,
+    "reward": 0.993
+  },
+  "same_question_guard_skipped": {
+    "answer": 672000.0,
+    "reward": -1.0,
+    "error_vs_true_pct": 25.0,
+    "declared_trap": 672000.0
+  },
+  "promotion_on_five_record_fixture": {
+    "records": 5,
+    "promoted": 0,
+    "refused_as_designed": true
+  },
+  "freeze_enforced": true,
+  "held_out": {
+    "headline_answer": 639450.0,
+    "headline_reward": 0.994,
+    "coverage_gap_refused": true,
+    "correct": 2,
+    "total": 2
+  },
+  "measures_no_effect_size": true,
+  "note": "Validates the mechanism on a synthetic fixture. Not a statistical result; no percentage from this file belongs in a volume."
+}

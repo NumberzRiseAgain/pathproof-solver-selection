@@ -1,0 +1,121 @@
+
+==============================================================================
+  1. SEED PROBLEMS  —  building the path memory
+==============================================================================
+
+  What did we write off on the chromate primer across FY24 to FY26?
+     got 403,200.00   expected 403200.0   -> correct   reward +0.994
+
+  What did disposal of that primer cost us over the same period?
+     got 236,250.00   expected 236250.0   -> correct   reward +0.994
+
+  What did we spend ordering the primer across FY24 to FY26?
+     got 537,600.00   expected 537600.0   -> correct   reward +0.993
+     trap: inflated to 672000.0 if deduplicate is skipped
+
+  How many distinct states do the shops sit in?
+     got 1.00   expected 1.0   -> correct   reward +0.995
+     trap: returns 3 if normalize_identifier is skipped
+
+  What did we spend ordering the primer across FY24 to FY26? (asked again, answered without the duplicate guard)
+     got 672,000.00   expected 537600.0   -> WRONG   reward -1.000
+     trap: the same question solved by a path that skips deduplicate
+
+==============================================================================
+  2. THE PATH, AS A MAINTAINER READS IT
+==============================================================================
+
+  What did we spend ordering the primer across FY24 to FY26?
+
+  1. resolve_metric(name='ordered value')
+  2. select_source(table='supply_transactions')
+  3. bind_entity(column='nsn', value='8010-01-555-1234')
+  4. deduplicate(key='supply_id')
+  5. filter(column='fy', op='in', value=('FY24', 'FY25', 'FY26'))
+  6. derive_measure(name='ordered value', parts=[12 values, sum=537,600.00])
+  7. validate(check='non_negative')
+
+  execution trace:
+     resolve_metric: "ordered value" -> sum(qty * unit_cost)
+     select_source: supply_transactions (15 rows)
+     bind_entity: nsn = 8010-01-555-1234
+     deduplicate: on supply_id (3 duplicate row(s) removed)
+     filter: fy in ('FY24', 'FY25', 'FY26') -> 12 row(s)
+     derive_measure: ordered value = 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 + 44,800.00 = 537,600.00
+     validate: non_negative -> pass
+
+==============================================================================
+  3. COMPOSITE PROMOTION  —  and why it refuses here
+==============================================================================
+
+  The rule requires 8 accepted occurrences, a 10-point lift over
+  matched paths, no degradation on an internal validation slice,
+  and a real saving in path length. Five seed records cannot clear
+  that bar, and the rule declining to invent a building block on
+  thin evidence is the behaviour we want to show.
+
+   nothing met the promotion rule  <-- correct on 5 records
+   tests/test_hazpath.py proves the rule DOES fire on a clean
+   20-record separation, so this is a refusal and not a bug
+
+==============================================================================
+  4. FREEZE
+==============================================================================
+
+  5 records over databases ['hazmat_alpha']
+  memory is frozen; scoring cannot write to it
+  verified: path memory is frozen; scoring must not write to it
+
+==============================================================================
+  5. HELD-OUT PROBLEMS  —  a database the memory has never contained
+==============================================================================
+
+  Across FY24 to FY26, what did the over-ordering of this primer cost us in write-off and disposal together?
+  [hazmat_beta, absent from memory]
+
+     policy chose resolve_metric -> select_source -> bind_entity -> filter -> aggregate -> validate with weight 0.75
+        supported by: What did disposal of that primer cost us over the same period?
+        supported by: What did we write off on the chromate primer across FY24 to FY26?
+
+     method used:
+       1. resolve_metric(name='over-order cost')
+       2. select_source(table='disposal_dtid')
+       3. bind_entity(column='nsn', value='8010-01-555-1234')
+       4. filter(column='fy', op='in', value=('FY24', 'FY25', 'FY26'))
+       5. derive_measure(name='over-order cost', parts=[403200.0, 236250.0])
+       6. validate(check='non_negative')
+
+     got 639,450.00
+     expected 639450.0  ->  correct   reward +0.994
+
+  How much primer did the Fuel Cell shop order in FY26?
+  [hazmat_beta, absent from memory]
+
+     policy chose resolve_metric -> select_source -> bind_entity -> deduplicate -> filter -> derive_measure -> validate with weight 0.46
+        supported by: What did we spend ordering the primer across FY24 to FY26?
+
+     method used:
+       1. resolve_metric(name='ordered value')
+       2. select_source(table='supply_transactions')
+       3. bind_entity(column='nsn', value='8010-01-555-1234')
+       4. deduplicate(key='supply_id')
+       5. probe_coverage(table='supply_transactions', key='shop_id', expect_key='S06')
+       6. filter(column='shop_id', op='==', value='S06')
+       7. aggregate(column='qty', how='sum')
+       8. validate(check='rows_present')
+
+     got ABSTAIN (S06 has no rows in supply_transactions; the question cannot be answered from the sources selected)
+     expected ABSTAIN  ->  correct   reward +0.000
+
+==============================================================================
+  SUMMARY
+==============================================================================
+
+  held-out problems answered correctly: 2 of 2
+  one of them is a refusal, and refusing was the correct answer
+
+  This validates the MECHANISM. It measures no effect size.
+  The powered comparison is PATH_TRANSFER_PREREGISTRATION.md, on BIRD.
+
+  memory written to memory_dump.json
+

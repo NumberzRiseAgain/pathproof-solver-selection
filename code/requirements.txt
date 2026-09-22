@@ -1,0 +1,4 @@
+# Standard library only. The reference implementation (code/pathproof) imports nothing
+# outside the Python 3.10+ standard library and calls no model and no network.
+# pytest is used by run_tests.py when it is installed; without it the same 20 tests run
+# under the shim in run_tests.py, so nothing needs installing on a bare machine.

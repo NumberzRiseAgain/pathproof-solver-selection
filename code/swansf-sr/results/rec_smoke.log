@@ -1,0 +1,19 @@
+train SYNTHETIC partition: n=1400  timesteps=60  params=24  positives=63 (4.50%)
+test  SYNTHETIC partition: n=1400  timesteps=60  params=24  positives=63 (4.50%)
+
+*** SYNTHETIC (recursive signal) - validation only, no number below is a scientific result. ***
+
+  seed 0: val TSS +0.6658  size 3  s_t = mul(d_R_VALUE, d_TOTUSJH)
+  seed 1: val TSS +0.1817  size 11  s_t = max(add(sub(d_TOTUSJH, TOTFX), tanh(TOTFZ)), sqrt(div(MEANGAM, R_VALUE)))
+  seed 2: val TSS +0.1603  size 2  s_t = abs(EPSZ)
+
+==========================================================================
+STATIC FORMULA    TSS +0.2428  [+0.1166, +0.3701]  size 5
+                  mul(add(TOTUSJH_delta, SHRGT45_slope), R_VALUE_last)
+RECURSIVE RULE    TSS +0.5854  [+0.5022, +0.6585]  size 3
+                  s_t = mul(d_R_VALUE, d_TOTUSJH)
+margin (recursive - static): +0.3426
+==========================================================================
+
+terminals used: d_R_VALUE, d_TOTUSJH
+written to /home/claude/swansf-sr/src/../results/recursive_smoke.json

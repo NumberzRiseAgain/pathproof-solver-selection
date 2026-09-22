@@ -1,0 +1,20 @@
+train SYNTHETIC partition: n=1400  timesteps=60  params=24  positives=63 (4.50%)
+test  SYNTHETIC partition: n=1400  timesteps=60  params=24  positives=63 (4.50%)
+
+*** SYNTHETIC (recursive signal) - validation only, no number below is a scientific result. ***
+
+  seed 0: val TSS +1.0000  size 5  s_t = add(s, mul(d_R_VALUE, TOTUSJH))
+  seed 1: v/usr/local/lib/python3.11/dist-packages/joblib/externals/loky/backend/res  seed 2: val TSS +0.0585  size 5  s_t = min(tanh(TOTPOT), neg(EPSZ))
+  seed 3: val TSS +1.0000  size 11  s_t = mul(add(max(d_TOTUSJH, d_R_VALUE), neg(s)), tanh(min(d_R_VALUE, s)))
+  seed 4: val TSS +0.6658  size 3  s_t = mul(d_R_VALUE, d_TOTUSJH)
+
+==========================================================================
+STATIC FORMULA    TSS +0.2428  [+0.1166, +0.3701]  size 5
+                  mul(add(TOTUSJH_delta, SHRGT45_slope), R_VALUE_last)
+RECURSIVE RULE    TSS +0.9985  [+0.9962, +1.0000]  size 5
+                  s_t = add(s, mul(d_R_VALUE, TOTUSJH))
+margin (recursive - static): +0.7557
+==========================================================================
+
+terminals used: TOTUSJH, d_R_VALUE, s
+written to /home/claude/swansf-sr/src/../results/recursive_seeded.json

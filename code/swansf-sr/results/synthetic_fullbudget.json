@@ -1,0 +1,101 @@
+{
+  "run_utc": "2026-09-01T00:19:15.002531+00:00",
+  "git_rev": "uncommitted",
+  "python": "3.11.15",
+  "synthetic": true,
+  "tag": "full-budget pipeline validation on synthetic surrogate",
+  "protocol": {
+    "train_partition": "synthetic",
+    "test_partition": "synthetic",
+    "representation": "mvts",
+    "n_features": 144,
+    "inner_val_fraction": 0.3,
+    "threshold_fit_on": "inner validation split of train partition",
+    "headline_metric": "TSS"
+  },
+  "class_balance": {
+    "train_positive_rate": 0.045,
+    "test_positive_rate": 0.045,
+    "train_n": 1400,
+    "test_n": 1400
+  },
+  "gp": {
+    "tss": 0.584808443447187,
+    "hss2": 0.20553786838800128,
+    "recall": 0.7777777777777778,
+    "precision": 0.15960912052117263,
+    "far": 0.19296933433059088,
+    "tp": 49,
+    "fn": 14,
+    "fp": 258,
+    "tn": 1079,
+    "threshold": 0.5347183384583376,
+    "tss_ci95": [
+      0.4701717514662394,
+      0.6821918110715604
+    ],
+    "hss2_ci95": [
+      0.1493568789152024,
+      0.2615459437141334
+    ],
+    "expression": "neg(TOTUSJH_delta)",
+    "expression_length": 2,
+    "val_tss": 0.6678041737760861,
+    "model": "gp",
+    "orientation": -1.0,
+    "n_seeds": 5,
+    "all_seed_val_tss": [
+      0.6678041737760861,
+      0.6620291376821105,
+      0.6620291376821105,
+      0.6620291376821105,
+      0.6620291376821105
+    ],
+    "all_seed_lengths": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "baselines": [
+    {
+      "tss": 0.6592703398986122,
+      "hss2": 0.3753844697865897,
+      "recall": 0.746031746031746,
+      "precision": 0.2883435582822086,
+      "far": 0.08676140613313388,
+      "tp": 47,
+      "fn": 16,
+      "fp": 116,
+      "tn": 1221,
+      "threshold": 0.10911304973080922,
+      "tss_ci95": [
+        0.5476230604601391,
+        0.7649876938732444
+      ],
+      "val_tss": 0.68473552959706,
+      "model": "rf"
+    },
+    {
+      "tss": 0.6997423751350452,
+      "hss2": 0.31990881458966564,
+      "recall": 0.8253968253968254,
+      "precision": 0.23636363636363636,
+      "far": 0.1256544502617801,
+      "tp": 52,
+      "fn": 11,
+      "fp": 168,
+      "tn": 1169,
+      "threshold": -0.805836070209399,
+      "tss_ci95": [
+        0.5968772665179226,
+        0.7906630747746722
+      ],
+      "val_tss": 0.6999606247539046,
+      "model": "svm"
+    }
+  ],
+  "margin_tss_vs_best_baseline": -0.11493393168785826
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "e4_swansf",
+  "what": "swansf-sr: pre-registered GP study of readable flare predictors on SWAN-SF",
+  "run_utc": "2026-09-16T18:53:07.290790Z",
+  "real_data_run": false,
+  "status_in_volume": "pre-registered, not run; listed so a reviewer knows it exists; changes nothing in the feasibility determination",
+  "preregistration_sha256": "cbb0f4bf080e89d80183100fd8cfb30c2783a8b67a20713431af255c94456a06",
+  "shipped_results": {
+    "results/parsimony_sweep.json": "6dd28e6f8e0570ba04761b1835691d26005d00ff0591f02c138e3ce432aeb433",
+    "results/recursive_seeded.json": "6072e9ffbf0da561596cb53dfdb586ab2e89098ded12098d123e4c6730bbe9e2",
+    "results/recursive_smoke.json": "12f3112005817326fd6b61019b07a09ed5c8034cbfccee676799b1dfab970d9e",
+    "results/regression_check.json": "adeda63954290e609e6e9b54ca2178def736c82bfe485b22698710952f686ce1",
+    "results/smoke.json": "6bf50481b45659afe66f8388fa0de86ad585f369be40db5b3fe350bafa554e6b",
+    "results/smoke2.json": "96761bb81fee55498b2003ac2069d510507cc10e9078707a9a12ab3ee8cbeeb3",
+    "results/smoke3.json": "da9523868ec7bd9ded9a0d5949070a8bac6cb1c661d4821054cc3d8191f980d5",
+    "results/smoke4.json": "394c1cbadf5754f9fbac41b9129eaefe84d78f8f3ea419a118502d6336aef8fc",
+    "results/synthetic_compositional.json": "adf335087a69b3c82b37ccedb66963644891c5126396dea9c578a5c673cfe3f8",
+    "results/synthetic_fullbudget.json": "a5518d8ec36860ab4bac5ba38310ae3b5f05da79bd1e0174329b60644bcc3ad6"
+  },
+  "git_head": "72d4196",
+  "tests": {
+    "command": "python3 tests/run_tests.py",
+    "exit": 0,
+    "tail": "  mean = np.nanmean(X, axis=1)\n/Users/raghu/Library/Python/3.9/lib/python/site-packages/numpy/lib/_nanfunctions_impl.py:2035: RuntimeWarning: Degrees of freedom <= 0 for slice.\n  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,\n/Users/raghu/Downloads/01_Pursuits/2026-09_SBIR_September/DPA26TZ05-DV003_SPEEDDIAL_STTR/08_Analysis/code/swansf-sr/src/features.py:73: RuntimeWarning: All-NaN slice encountered\n  maxabs = np.nanmax(np.abs(X), axis=1)"
+  }
+}

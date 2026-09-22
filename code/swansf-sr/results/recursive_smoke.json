@@ -1,0 +1,88 @@
+{
+  "run_utc": "2026-09-01T01:31:19.325161+00:00",
+  "git_rev": "fbf51478543b831da659d58df00c86121718c6fc",
+  "python": "3.11.15",
+  "synthetic": true,
+  "synthetic_signal": "recursive",
+  "tag": "can the search find a planted recursive rule?",
+  "protocol": {
+    "train": "synthetic",
+    "test": "synthetic",
+    "stride": 1,
+    "seeds": 3,
+    "threshold_fit_on": "inner validation split of train"
+  },
+  "static_formula": {
+    "tss": 0.2428322114185989,
+    "hss2": 0.05253317032828737,
+    "recall": 0.6190476190476191,
+    "precision": 0.07195571955719557,
+    "far": 0.37621540762902017,
+    "tp": 39,
+    "fn": 24,
+    "fp": 503,
+    "tn": 834,
+    "threshold": 0.0065848855542332,
+    "tss_ci95": [
+      0.11659192825112108,
+      0.3700636966326383
+    ],
+    "expression": "mul(add(TOTUSJH_delta, SHRGT45_slope), R_VALUE_last)",
+    "size": 5,
+    "val_tss": 0.39795248720304505,
+    "kind": "static formula"
+  },
+  "recursive_rule": {
+    "tss": 0.5853901770132137,
+    "hss2": 0.13991736850468775,
+    "recall": 0.9047619047619048,
+    "precision": 0.11776859504132231,
+    "far": 0.3193717277486911,
+    "tp": 57,
+    "fn": 6,
+    "fp": 427,
+    "tn": 910,
+    "threshold": -0.07353529882587129,
+    "tss_ci95": [
+      0.502221583868424,
+      0.6584917873989217
+    ],
+    "rule": "s_t = mul(d_R_VALUE, d_TOTUSJH)",
+    "size": 3,
+    "depth": 2,
+    "terminals": [
+      "d_R_VALUE",
+      "d_TOTUSJH"
+    ],
+    "val_tss": 0.6658354114713216,
+    "kind": "recursive rule",
+    "n_seeds": 3,
+    "all_seed_val_tss": [
+      0.6658354114713216,
+      0.18165113531959573,
+      0.1602572516078225
+    ],
+    "all_seed_rules": [
+      "s_t = mul(d_R_VALUE, d_TOTUSJH)",
+      "s_t = max(add(sub(d_TOTUSJH, TOTFX), tanh(TOTFZ)), sqrt(div(MEANGAM, R_VALUE)))",
+      "s_t = abs(EPSZ)"
+    ],
+    "all_seed_terminals": [
+      [
+        "d_R_VALUE",
+        "d_TOTUSJH"
+      ],
+      [
+        "MEANGAM",
+        "R_VALUE",
+        "TOTFX",
+        "TOTFZ",
+        "d_TOTUSJH"
+      ],
+      [
+        "EPSZ"
+      ]
+    ]
+  },
+  "margin_recursive_minus_static": 0.3425579655946148
+}

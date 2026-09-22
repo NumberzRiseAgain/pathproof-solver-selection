@@ -1,0 +1,103 @@
+{
+  "run_utc": "2026-09-01T01:45:21.092233+00:00",
+  "git_rev": "fbf51478543b831da659d58df00c86121718c6fc",
+  "python": "3.11.15",
+  "synthetic": true,
+  "synthetic_signal": "recursive",
+  "tag": "affine-recursion seeding, constants reachable",
+  "protocol": {
+    "train": "synthetic",
+    "test": "synthetic",
+    "stride": 1,
+    "seeds": 5,
+    "threshold_fit_on": "inner validation split of train"
+  },
+  "static_formula": {
+    "tss": 0.2428322114185989,
+    "hss2": 0.05253317032828737,
+    "recall": 0.6190476190476191,
+    "precision": 0.07195571955719557,
+    "far": 0.37621540762902017,
+    "tp": 39,
+    "fn": 24,
+    "fp": 503,
+    "tn": 834,
+    "threshold": 0.0065848855542332,
+    "tss_ci95": [
+      0.11659192825112108,
+      0.3700636966326383
+    ],
+    "expression": "mul(add(TOTUSJH_delta, SHRGT45_slope), R_VALUE_last)",
+    "size": 5,
+    "val_tss": 0.39795248720304505,
+    "kind": "static formula"
+  },
+  "recursive_rule": {
+    "tss": 0.9985041136873598,
+    "hss2": 0.9836266884977487,
+    "recall": 1.0,
+    "precision": 0.9692307692307692,
+    "far": 0.0014958863126402393,
+    "tp": 63,
+    "fn": 0,
+    "fp": 2,
+    "tn": 1335,
+    "threshold": -7.085427135678392,
+    "tss_ci95": [
+      0.9962461757399774,
+      1.0
+    ],
+    "rule": "s_t = add(s, mul(d_R_VALUE, TOTUSJH))",
+    "size": 5,
+    "depth": 3,
+    "terminals": [
+      "TOTUSJH",
+      "d_R_VALUE",
+      "s"
+    ],
+    "val_tss": 1.0,
+    "kind": "recursive rule",
+    "n_seeds": 5,
+    "all_seed_val_tss": [
+      1.0,
+      1.0,
+      1.0,
+      0.6658354114713216,
+      0.05853786586166154
+    ],
+    "all_seed_rules": [
+      "s_t = add(s, mul(d_R_VALUE, TOTUSJH))",
+      "s_t = add(max(TOTBSQ, s), mul(TOTUSJH, R_VALUE))",
+      "s_t = mul(add(max(d_TOTUSJH, d_R_VALUE), neg(s)), tanh(min(d_R_VALUE, s)))",
+      "s_t = mul(d_R_VALUE, d_TOTUSJH)",
+      "s_t = min(tanh(TOTPOT), neg(EPSZ))"
+    ],
+    "all_seed_terminals": [
+      [
+        "TOTUSJH",
+        "d_R_VALUE",
+        "s"
+      ],
+      [
+        "R_VALUE",
+        "TOTBSQ",
+        "TOTUSJH",
+        "s"
+      ],
+      [
+        "d_R_VALUE",
+        "d_TOTUSJH",
+        "s"
+      ],
+      [
+        "d_R_VALUE",
+        "d_TOTUSJH"
+      ],
+      [
+        "EPSZ",
+        "TOTPOT"
+      ]
+    ]
+  },
+  "margin_recursive_minus_static": 0.7556719022687609
+}

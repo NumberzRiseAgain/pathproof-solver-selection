@@ -1,0 +1,72 @@
+{
+  "run_utc": "2026-09-01T03:12:29.287494+00:00",
+  "git_rev": "c66e0cbbfd417869e80adc57239896ae2ce6d80f",
+  "python": "3.11.15",
+  "synthetic": true,
+  "synthetic_signal": "recursive",
+  "tag": "",
+  "protocol": {
+    "train": "synthetic",
+    "test": "synthetic",
+    "stride": 1,
+    "seeds": 1,
+    "threshold_fit_on": "inner validation split of train"
+  },
+  "static_formula": {
+    "tss": 0.01944652206432318,
+    "hss2": 0.002464870330966777,
+    "recall": 0.7142857142857143,
+    "precision": 0.04620123203285421,
+    "far": 0.6948391922213911,
+    "tp": 45,
+    "fn": 18,
+    "fp": 929,
+    "tn": 408,
+    "threshold": -1.757846122586102,
+    "tss_ci95": [
+      -0.09410188741962691,
+      0.12395430785706707
+    ],
+    "expression": "add(sub(abs(log(MEANALP_std)), neg(abs(EPSZ_last))), div(abs(log(TOTFZ_delta)), mul(mul(EPSY_maxabs, MEANGBZ_std), log(SHRGT45_last))))",
+    "size": 18,
+    "val_tss": 0.21393883711773198,
+    "kind": "static formula"
+  },
+  "recursive_rule": {
+    "tss": -0.10595861381201699,
+    "hss2": -0.018826135105204873,
+    "recall": 0.38095238095238093,
+    "precision": 0.035555555555555556,
+    "far": 0.4869109947643979,
+    "tp": 24,
+    "fn": 39,
+    "fp": 651,
+    "tn": 686,
+    "threshold": 0.0030407789913677874,
+    "tss_ci95": [
+      -0.2293703205163403,
+      0.01542075025346389
+    ],
+    "rule": "s_t = d_TOTFY",
+    "size": 1,
+    "depth": 1,
+    "terminals": [
+      "d_TOTFY"
+    ],
+    "val_tss": 0.14778842367764794,
+    "kind": "recursive rule",
+    "n_seeds": 1,
+    "all_seed_val_tss": [
+      0.14778842367764794
+    ],
+    "all_seed_rules": [
+      "s_t = d_TOTFY"
+    ],
+    "all_seed_terminals": [
+      [
+        "d_TOTFY"
+      ]
+    ]
+  },
+  "margin_recursive_minus_static": -0.12540513587634017
+}

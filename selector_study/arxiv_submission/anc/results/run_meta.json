@@ -1,0 +1,10 @@
+{
+  "python": "3.11.15",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "numpy": "2.4.4",
+  "tau": 1e-08,
+  "maxit": 20000,
+  "wall_cap": 30.0,
+  "probe_steps": 30,
+  "finished_utc": "2026-09-13T15:47:09Z"
+}

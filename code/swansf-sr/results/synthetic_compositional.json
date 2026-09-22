@@ -1,0 +1,101 @@
+{
+  "run_utc": "2026-09-01T00:28:05.837429+00:00",
+  "git_rev": "39d8e2daa86721fc63f2f62616e28f5bc610715a",
+  "python": "3.11.15",
+  "synthetic": true,
+  "tag": "compositional surrogate: can the search compose?",
+  "protocol": {
+    "train_partition": "synthetic",
+    "test_partition": "synthetic",
+    "representation": "mvts",
+    "n_features": 144,
+    "inner_val_fraction": 0.3,
+    "threshold_fit_on": "inner validation split of train partition",
+    "headline_metric": "TSS"
+  },
+  "class_balance": {
+    "train_positive_rate": 0.045,
+    "test_positive_rate": 0.045,
+    "train_n": 1400,
+    "test_n": 1400
+  },
+  "gp": {
+    "tss": 0.4966342557965595,
+    "hss2": 0.16205662219329645,
+    "recall": 0.7142857142857143,
+    "precision": 0.13392857142857142,
+    "far": 0.21765145848915482,
+    "tp": 45,
+    "fn": 18,
+    "fp": 291,
+    "tn": 1046,
+    "threshold": 0.0003870323058707825,
+    "tss_ci95": [
+      0.37418793006133877,
+      0.603174794633245
+    ],
+    "hss2_ci95": [
+      0.1129469032695311,
+      0.21397854275298228
+    ],
+    "expression": "mul(TOTUSJH_slope, R_VALUE_last)",
+    "expression_length": 3,
+    "val_tss": 0.6777792361202257,
+    "model": "gp",
+    "orientation": 1.0,
+    "n_seeds": 5,
+    "all_seed_val_tss": [
+      0.6777792361202257,
+      0.3966399789998687,
+      0.3537209607560047,
+      0.3537209607560047,
+      0.3537209607560047
+    ],
+    "all_seed_lengths": [
+      3,
+      7,
+      2,
+      2,
+      2
+    ]
+  },
+  "baselines": [
+    {
+      "tss": 0.5390177013213662,
+      "hss2": 0.11585039116922087,
+      "recall": 0.9047619047619048,
+      "precision": 0.1043956043956044,
+      "far": 0.36574420344053854,
+      "tp": 57,
+      "fn": 6,
+      "fp": 489,
+      "tn": 848,
+      "threshold": 0.04554828644594487,
+      "tss_ci95": [
+        0.4590623192596877,
+        0.6116763897549367
+      ],
+      "val_tss": 0.4777529859561622,
+      "model": "rf"
+    },
+    {
+      "tss": 0.34272417518490816,
+      "hss2": 0.05438911162692551,
+      "recall": 0.873015873015873,
+      "precision": 0.07198952879581152,
+      "far": 0.5302916978309649,
+      "tp": 55,
+      "fn": 8,
+      "fp": 709,
+      "tn": 628,
+      "threshold": -1.1000451232192925,
+      "tss_ci95": [
+        0.25074675478878444,
+        0.4245660023722033
+      ],
+      "val_tss": 0.43365271032943953,
+      "model": "svm"
+    }
+  ],
+  "margin_tss_vs_best_baseline": -0.04238344552480666
+}

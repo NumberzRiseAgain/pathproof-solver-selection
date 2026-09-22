@@ -1,0 +1,35 @@
+=== COGLINE-style evidence run ===
+topic       DPA26TZ05-DV003_SPEEDDIAL_STTR
+started     2026-09-06T00:40:00Z
+host        Linux 6.8.0-136-generic aarch64
+python      Python 3.10.12
+git         not a repo
+=== reproduce.sh ===
+== SPEED DIAL evidence pack: reproduce.sh  2026-09-06T00:40:00Z
+== python: Python 3.10.12   root: /sessions/rcw-014ksu58vqpjezrrpddfqpzj/mnt/01_Pursuits/2026-09_SBIR_September/DPA26TZ05-DV003_SPEEDDIAL_STTR/08_Analysis
+-- e1: tests
+   promoted composite__sele_bind_dedu_filt_deri
+      sequence   select_source -> bind_entity -> deduplicate -> filter -> derive_measure
+      seen in    10 accepted paths
+      lift       +100% over matched paths without it
+   promoted composite__reso_sele_bind_dedu_filt
+      sequence   resolve_metric -> select_source -> bind_entity -> deduplicate -> filter
+      seen in    10 accepted paths
+      lift       +100% over matched paths without it
+   promoted composite__bind_dedu_filt_deri_vali
+      sequence   bind_entity -> deduplicate -> filter -> derive_measure -> validate
+      seen in    10 accepted paths
+      lift       +100% over matched paths without it
+e1_tests: 20 passed, 0 failed of 20 [shim (pytest not installed)]
+-- e2: walkthrough
+e2_demo: exit 0; matches shipped output: True; guard 537,600 vs no-guard 672,000; promoted 0: True; held-out 2 of 2
+-- e3: recorded developer test (transcription + hashes)
+e3_devtest: transcribed from SPEEDDIAL_Developer_Test_Final_Report.xlsx (e69f03f9e22b...) and DEVELOPER_TEST.md (5e3d00c19724...); arms A 0/3, B 0/3, C 3/3, D 3/3
+-- e4: SWAN-SF study (optional)
+e4_swansf: tests exit 0; 10 shipped result file(s) hashed; real-data run: no
+-- manifest and lock check
+manifest: run 6fe38d1f66c26212; 66 input files hashed; lock MATCHES (06bc8e0af194...); git HEAD 9abeddc; lock commit present: True
+== done, status 0  (0 = every gated step passed)
+=== finished ===
+exit code   0
+elapsed     4s

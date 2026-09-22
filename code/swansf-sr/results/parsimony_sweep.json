@@ -1,0 +1,101 @@
+{
+  "synthetic": true,
+  "sweep": [
+    {
+      "parsimony": 0.0,
+      "val_tss": 0.6678,
+      "nodes": 2,
+      "all_val_tss": [
+        0.6678,
+        0.662,
+        0.662
+      ],
+      "all_nodes": [
+        2,
+        2,
+        2
+      ],
+      "expr": "neg(TOTUSJH_delta)"
+    },
+    {
+      "parsimony": 5e-05,
+      "val_tss": 0.6678,
+      "nodes": 2,
+      "all_val_tss": [
+        0.6678,
+        0.662,
+        0.662
+      ],
+      "all_nodes": [
+        2,
+        2,
+        2
+      ],
+      "expr": "neg(TOTUSJH_delta)"
+    },
+    {
+      "parsimony": 0.0002,
+      "val_tss": 0.6678,
+      "nodes": 2,
+      "all_val_tss": [
+        0.6678,
+        0.662,
+        0.662
+      ],
+      "all_nodes": [
+        2,
+        2,
+        2
+      ],
+      "expr": "neg(TOTUSJH_delta)"
+    },
+    {
+      "parsimony": 0.0008,
+      "val_tss": 0.6678,
+      "nodes": 2,
+      "all_val_tss": [
+        0.6678,
+        0.662,
+        0.662
+      ],
+      "all_nodes": [
+        2,
+        2,
+        2
+      ],
+      "expr": "neg(TOTUSJH_delta)"
+    },
+    {
+      "parsimony": 0.002,
+      "val_tss": 0.6678,
+      "nodes": 2,
+      "all_val_tss": [
+        0.6678,
+        0.662,
+        0.662
+      ],
+      "all_nodes": [
+        2,
+        2,
+        2
+      ],
+      "expr": "neg(TOTUSJH_delta)"
+    }
+  ],
+  "selected": {
+    "parsimony": 0.0,
+    "val_tss": 0.6678,
+    "nodes": 2,
+    "all_val_tss": [
+      0.6678,
+      0.662,
+      0.662
+    ],
+    "all_nodes": [
+      2,
+      2,
+      2
+    ],
+    "expr": "neg(TOTUSJH_delta)"
+  }
+}

@@ -1,0 +1,5 @@
+# The stack that produced row one of the environment table in the paper.
+# The median regret and the winner accuracy move with these versions; nothing else does.
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.7.2

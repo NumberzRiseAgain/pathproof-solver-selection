@@ -1,0 +1,38 @@
+PRE-REGISTRATION LOCK
+=====================
+
+Document   PATH_TRANSFER_PREREGISTRATION.md
+Locked     1 September 2026
+By         Raghu Venkat, Co-Founder & CPTO, Numberz.ai Inc.
+Supports   DPA26TZ05-DV003 (SPEED DIAL), Direct-to-Phase-II feasibility items 2 and 3
+
+SHA-256 of the document
+  06bc8e0af19402bc1094179e3a99513b04a4765710f540be9668b80a6dfe40b8
+
+Git commit (document + reference implementation + tests)
+  42a70b7d4478cbf0c7667be58b09c5716b76b55f
+Tree
+  561bd4ac04d732f923d04e28249f87ac362dbb8c
+
+Verify
+  shasum -a 256 PATH_TRANSFER_PREREGISTRATION.md
+  git log --oneline -1
+  python3 -m pytest tests/ -q
+
+What the lock means
+  The success criterion, the split policy, the similarity function, the
+  method-equivalence relation, the utility weights, the retrieval depth, the
+  exclusion threshold, the oracle and the four promotion conditions were all
+  fixed before any test record was read.
+
+  A correction found after this point is recorded as a dated addendum beneath
+  the lock line in the document, never as an edit above it. If the text above
+  the lock line changes, this hash stops matching, and that is the intended
+  behaviour.
+
+Status at lock
+  tests           20 passed
+  pyflakes        clean
+  test split      not yet drawn
+  memory          not yet built
+  BIRD            not yet touched

@@ -1,0 +1,549 @@
+{
+  "environment": {
+    "python": "3.10.12",
+    "platform": "Linux-6.8.0-136-generic-aarch64-with-glibc2.35",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.2"
+  },
+  "probe_economics": {
+    "end_to_end": {
+      "n": 65,
+      "n_probe_exceeds_solve": 3,
+      "max_ratio": 6.94,
+      "median_ratio": 0.2436
+    },
+    "solve_only": {
+      "n": 65,
+      "n_probe_exceeds_solve": 9,
+      "max_ratio": 12.33,
+      "median_ratio": 0.3106
+    },
+    "probe_seconds": {
+      "min": 0.0269,
+      "max": 0.4854,
+      "median": 0.0557,
+      "n": 72
+    }
+  },
+  "n_operators": 72,
+  "n_usable": 65,
+  "n_no_method_converged": 7,
+  "folds": {
+    "F1_conduction2d": {
+      "n_test": 6,
+      "fallback": "M1_jacobi",
+      "misses": {
+        "n": 6,
+        "n_exact": 6,
+        "n_miss": 0,
+        "n_miss_not_converged": 0,
+        "n_miss_converged": 0,
+        "n_miss_under_0p20": 0,
+        "median_miss_converged": null,
+        "frac_wrong": 0.0
+      },
+      "regret": {
+        "n": 6,
+        "n_converged": 6,
+        "n_not_converged": 0,
+        "median_conditional": 0.0,
+        "p90_conditional": 0.0,
+        "median_unconditional": 0.0,
+        "p90_unconditional": 0.0
+      },
+      "regret_deployment": {
+        "n": 6,
+        "n_converged": 6,
+        "n_not_converged": 0,
+        "median_conditional": 0.10369691328281999,
+        "p90_conditional": 0.28990296612987043,
+        "median_unconditional": 0.04868148863533196,
+        "p90_unconditional": 0.41030158264798217
+      },
+      "regret_kappa_only": {
+        "n": 6,
+        "n_converged": 3,
+        "n_not_converged": 3,
+        "median_conditional": 2.2410702408136722,
+        "p90_conditional": 2.757432243862295,
+        "median_unconditional": 2.8865227446244504,
+        "p90_unconditional": "inf"
+      },
+      "regret_null": {
+        "n": 6,
+        "n_converged": 6,
+        "n_not_converged": 0,
+        "median_conditional": 0.5176431199350048,
+        "p90_conditional": 1.7440559255177108,
+        "median_unconditional": 0.4864087263861983,
+        "p90_unconditional": 2.8865227446244504
+      },
+      "winner_accuracy": 1.0,
+      "coverage": 0.0,
+      "regret_with_abstention": {
+        "n": 6,
+        "n_converged": 6,
+        "n_not_converged": 0,
+        "median_conditional": 0.0,
+        "p90_conditional": 0.0,
+        "median_unconditional": 0.0,
+        "p90_unconditional": 0.0
+      },
+      "selected_outcomes": {
+        "converged": 6
+      },
+      "oracle_mix": {
+        "M0_none": 0,
+        "M1_jacobi": 6,
+        "M2_ssor": 0,
+        "M3_ic0": 0,
+        "M4_neumann4": 0,
+        "M5_chebyshev8": 0
+      }
+    },
+    "F2_conduction3d": {
+      "n_test": 11,
+      "fallback": "M0_none",
+      "misses": {
+        "n": 11,
+        "n_exact": 9,
+        "n_miss": 2,
+        "n_miss_not_converged": 1,
+        "n_miss_converged": 1,
+        "n_miss_under_0p20": 0,
+        "median_miss_converged": 3.3203,
+        "frac_wrong": 0.1818
+      },
+      "regret": {
+        "n": 11,
+        "n_converged": 10,
+        "n_not_converged": 1,
+        "median_conditional": 0.0,
+        "p90_conditional": 0.33202867367081956,
+        "median_unconditional": 0.0,
+        "p90_unconditional": 3.3202867367082076
+      },
+      "regret_deployment": {
+        "n": 11,
+        "n_converged": 10,
+        "n_not_converged": 1,
+        "median_conditional": 0.26921740965034313,
+        "p90_conditional": 1.1729763275408656,
+        "median_unconditional": 0.2998842261883803,
+        "p90_unconditional": 4.173137158432903
+      },
+      "regret_kappa_only": {
+        "n": 11,
+        "n_converged": 9,
+        "n_not_converged": 2,
+        "median_conditional": 0.0,
+        "p90_conditional": 2.412305143535493,
+        "median_unconditional": 0.0,
+        "p90_unconditional": "inf"
+      },
+      "regret_null": {
+        "n": 11,
+        "n_converged": 11,
+        "n_not_converged": 0,
+        "median_conditional": 0.0,
+        "p90_conditional": 0.40709679995395226,
+        "median_unconditional": 0.0,
+        "p90_unconditional": 0.40709679995395226
+      },
+      "winner_accuracy": 0.8181818181818182,
+      "coverage": 0.0,
+      "regret_with_abstention": {
+        "n": 11,
+        "n_converged": 3,
+        "n_not_converged": 8,
+        "median_conditional": 3.3202867367082076,
+        "p90_conditional": 3.5158532221836394,
+        "median_unconditional": "inf",
+        "p90_unconditional": "inf"
+      },
+      "selected_outcomes": {
+        "converged": 10,
+        "iteration_cap_20000": 1
+      },
+      "oracle_mix": {
+        "M0_none": 0,
+        "M1_jacobi": 11,
+        "M2_ssor": 0,
+        "M3_ic0": 0,
+        "M4_neumann4": 0,
+        "M5_chebyshev8": 0
+      }
+    },
+    "F3_anisotropic": {
+      "n_test": 12,
+      "fallback": "M1_jacobi",
+      "misses": {
+        "n": 12,
+        "n_exact": 2,
+        "n_miss": 10,
+        "n_miss_not_converged": 0,
+        "n_miss_converged": 10,
+        "n_miss_under_0p20": 6,
+        "median_miss_converged": 0.1602,
+        "frac_wrong": 0.8333
+      },
+      "regret": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.13793509501828327,
+        "p90_conditional": 0.34126262804941687,
+        "median_unconditional": 0.12552597906301513,
+        "p90_unconditional": 0.3512187816625802
+      },
+      "regret_deployment": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.47600178616252475,
+        "p90_conditional": 0.7611988519146662,
+        "median_unconditional": 0.4641005259330752,
+        "p90_unconditional": 0.7776136752602084
+      },
+      "regret_kappa_only": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.12129606926067676,
+        "p90_conditional": 0.34126262804941687,
+        "median_unconditional": 0.1209595313484892,
+        "p90_unconditional": 0.3512187816625802
+      },
+      "regret_null": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.18276253981446822,
+        "p90_conditional": 0.6482472189515096,
+        "median_unconditional": 0.15034421097355138,
+        "p90_unconditional": 0.6808695613627557
+      },
+      "winner_accuracy": 0.16666666666666666,
+      "coverage": 0.25,
+      "regret_with_abstention": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.13793509501828327,
+        "p90_conditional": 0.34126262804941687,
+        "median_unconditional": 0.12552597906301513,
+        "p90_unconditional": 0.3512187816625802
+      },
+      "selected_outcomes": {
+        "converged": 12
+      },
+      "oracle_mix": {
+        "M0_none": 12,
+        "M1_jacobi": 0,
+        "M2_ssor": 0,
+        "M3_ic0": 0,
+        "M4_neumann4": 0,
+        "M5_chebyshev8": 0
+      }
+    },
+    "F4_inclusions": {
+      "n_test": 12,
+      "fallback": "M1_jacobi",
+      "misses": {
+        "n": 12,
+        "n_exact": 3,
+        "n_miss": 9,
+        "n_miss_not_converged": 5,
+        "n_miss_converged": 4,
+        "n_miss_under_0p20": 0,
+        "median_miss_converged": 5.9647,
+        "frac_wrong": 0.75
+      },
+      "regret": {
+        "n": 12,
+        "n_converged": 7,
+        "n_not_converged": 5,
+        "median_conditional": 5.5733655618550415,
+        "p90_conditional": 7.955243365311519,
+        "median_unconditional": 6.154918232081139,
+        "p90_unconditional": "inf"
+      },
+      "regret_deployment": {
+        "n": 12,
+        "n_converged": 7,
+        "n_not_converged": 5,
+        "median_conditional": 5.886430538827459,
+        "p90_conditional": 8.131525516099668,
+        "median_unconditional": 6.366716048175985,
+        "p90_unconditional": "inf"
+      },
+      "regret_kappa_only": {
+        "n": 12,
+        "n_converged": 9,
+        "n_not_converged": 3,
+        "median_conditional": 0.0,
+        "p90_conditional": 11.344704737144294,
+        "median_unconditional": 0.0,
+        "p90_unconditional": "inf"
+      },
+      "regret_null": {
+        "n": 12,
+        "n_converged": 11,
+        "n_not_converged": 1,
+        "median_conditional": 0.4810263852038631,
+        "p90_conditional": 9.777917116820957,
+        "median_unconditional": 0.4810263852038631,
+        "p90_unconditional": 10.655731065157084
+      },
+      "winner_accuracy": 0.25,
+      "coverage": 0.3333333333333333,
+      "regret_with_abstention": {
+        "n": 12,
+        "n_converged": 8,
+        "n_not_converged": 4,
+        "median_conditional": 0.0,
+        "p90_conditional": 1.7323405037872794,
+        "median_unconditional": 0.0,
+        "p90_unconditional": "inf"
+      },
+      "selected_outcomes": {
+        "converged": 7,
+        "iteration_cap_20000": 5
+      },
+      "oracle_mix": {
+        "M0_none": 0,
+        "M1_jacobi": 9,
+        "M2_ssor": 0,
+        "M3_ic0": 0,
+        "M4_neumann4": 1,
+        "M5_chebyshev8": 2
+      }
+    },
+    "F5_graph": {
+      "n_test": 12,
+      "fallback": "M1_jacobi",
+      "misses": {
+        "n": 12,
+        "n_exact": 2,
+        "n_miss": 10,
+        "n_miss_not_converged": 0,
+        "n_miss_converged": 10,
+        "n_miss_under_0p20": 10,
+        "median_miss_converged": 0.1396,
+        "frac_wrong": 0.8333
+      },
+      "regret": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.13191122755563617,
+        "p90_conditional": 0.18501322395229547,
+        "median_unconditional": 0.12748520172524003,
+        "p90_unconditional": 0.18698934974881173
+      },
+      "regret_deployment": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.26860164430618266,
+        "p90_conditional": 0.47677009257961434,
+        "median_unconditional": 0.2658492338656596,
+        "p90_unconditional": 0.48402234302252056
+      },
+      "regret_kappa_only": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.1036992040815139,
+        "p90_conditional": 0.18501322395229547,
+        "median_unconditional": 0.08917798461579093,
+        "p90_unconditional": 0.18698934974881173
+      },
+      "regret_null": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.0,
+        "p90_conditional": 0.70399236884049,
+        "median_unconditional": 0.0,
+        "p90_unconditional": 0.7652506024815032
+      },
+      "winner_accuracy": 0.16666666666666666,
+      "coverage": 0.0,
+      "regret_with_abstention": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.0,
+        "p90_conditional": 0.0,
+        "median_unconditional": 0.0,
+        "p90_unconditional": 0.0
+      },
+      "selected_outcomes": {
+        "converged": 12
+      },
+      "oracle_mix": {
+        "M0_none": 0,
+        "M1_jacobi": 12,
+        "M2_ssor": 0,
+        "M3_ic0": 0,
+        "M4_neumann4": 0,
+        "M5_chebyshev8": 0
+      }
+    },
+    "F6_shifted": {
+      "n_test": 12,
+      "fallback": "M1_jacobi",
+      "misses": {
+        "n": 12,
+        "n_exact": 5,
+        "n_miss": 7,
+        "n_miss_not_converged": 0,
+        "n_miss_converged": 7,
+        "n_miss_under_0p20": 3,
+        "median_miss_converged": 0.2523,
+        "frac_wrong": 0.5833
+      },
+      "regret": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.11105482501659317,
+        "p90_conditional": 0.2720996644324697,
+        "median_unconditional": 0.09351042006565306,
+        "p90_unconditional": 0.272623258581089
+      },
+      "regret_deployment": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.5524916121511572,
+        "p90_conditional": 3.206583063512613,
+        "median_unconditional": 0.5430541261017416,
+        "p90_unconditional": 3.207742258943386
+      },
+      "regret_kappa_only": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.0,
+        "p90_conditional": 0.2720996644324697,
+        "median_unconditional": 0.0,
+        "p90_unconditional": 0.272623258581089
+      },
+      "regret_null": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.7110218432857959,
+        "p90_conditional": 1.2986104598219317,
+        "median_unconditional": 0.6901281800776755,
+        "p90_unconditional": 1.3081450670563624
+      },
+      "winner_accuracy": 0.4166666666666667,
+      "coverage": 0.5833333333333334,
+      "regret_with_abstention": {
+        "n": 12,
+        "n_converged": 12,
+        "n_not_converged": 0,
+        "median_conditional": 0.11105482501659317,
+        "p90_conditional": 0.2720996644324697,
+        "median_unconditional": 0.09351042006565306,
+        "p90_unconditional": 0.272623258581089
+      },
+      "selected_outcomes": {
+        "converged": 12
+      },
+      "oracle_mix": {
+        "M0_none": 11,
+        "M1_jacobi": 1,
+        "M2_ssor": 0,
+        "M3_ic0": 0,
+        "M4_neumann4": 0,
+        "M5_chebyshev8": 0
+      }
+    }
+  },
+  "families": [
+    "F1_conduction2d",
+    "F2_conduction3d",
+    "F3_anisotropic",
+    "F4_inclusions",
+    "F5_graph",
+    "F6_shifted"
+  ],
+  "rec_claimed_early_count": 25,
+  "n_runs": 432,
+  "n_converged_runs": 364,
+  "n_timeout_runs": 19,
+  "n_setup_failed": 0,
+  "pooled": {
+    "misses": {
+      "n": 65,
+      "n_exact": 27,
+      "n_miss": 38,
+      "n_miss_not_converged": 6,
+      "n_miss_converged": 32,
+      "n_miss_under_0p20": 19,
+      "median_miss_converged": 0.1687,
+      "frac_wrong": 0.5846
+    },
+    "regret": {
+      "n": 65,
+      "n_converged": 59,
+      "n_not_converged": 6,
+      "median_conditional": 0.10341132403831291,
+      "p90_conditional": 0.351904252780123,
+      "median_unconditional": 0.1209595313484892,
+      "p90_unconditional": 10.655731065157084
+    },
+    "regret_deployment": {
+      "n": 65,
+      "n_converged": 59,
+      "n_not_converged": 6,
+      "median_conditional": 0.41030158264798217,
+      "p90_conditional": 3.400821238841292,
+      "median_unconditional": 0.4375457116051455,
+      "p90_unconditional": 10.778739717985188
+    },
+    "regret_kappa_only": {
+      "n": 65,
+      "n_converged": 57,
+      "n_not_converged": 8,
+      "median_conditional": 0.0,
+      "p90_conditional": 2.177935149654106,
+      "median_unconditional": 0.11822042354723684,
+      "p90_unconditional": "inf"
+    },
+    "regret_null": {
+      "n": 65,
+      "n_converged": 64,
+      "n_not_converged": 1,
+      "median_conditional": 0.14334073217979185,
+      "p90_conditional": 1.2795412453530708,
+      "median_unconditional": 0.15034421097355138,
+      "p90_unconditional": 2.8865227446244504
+    },
+    "winner_accuracy": 0.4153846153846154,
+    "coverage": 0.2153846153846154,
+    "regret_with_abstention": {
+      "n": 65,
+      "n_converged": 53,
+      "n_not_converged": 12,
+      "median_conditional": 0.0,
+      "p90_conditional": 0.34690336568894375,
+      "median_unconditional": 0.09351042006565306,
+      "p90_unconditional": "inf"
+    },
+    "selected_outcomes": {
+      "converged": 59,
+      "iteration_cap_20000": 6
+    }
+  },
+  "criteria": {
+    "primary_median_le_0p05": false,
+    "primary_p90_le_0p20": false,
+    "secondary_winner_acc_ge_0p80": false
+  }
+}

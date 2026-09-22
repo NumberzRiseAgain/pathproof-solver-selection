@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "SPEEDDIAL: solution paths, a pre-registered GP study, and solver selection"
+message: "If you use this software, please cite it."
+type: software
+authors:
+  - family-names: Venkat
+    given-names: Raghu
+    affiliation: "Numberz.ai Inc."
+  - family-names: Anjali
+    given-names: Tricha
+    affiliation: "Numberz.ai Inc."
+repository-code: "https://github.com/NumberzRiseAgain/pathproof-solver-selection"
+license: MIT
+date-released: 2026-09-19
